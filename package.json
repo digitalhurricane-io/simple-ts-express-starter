@@ -4,14 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "tsc --project ./tsconfig.json && node ./dist/index.js "
+    "start": "concurrently \"tsc -w\" \"NODE_ENV=dev nodemon ./dist/index.js\" ",
+    "prod": "NODE_ENV=production node ./index.js"
   },
   "dependencies": {
     "@types/express": "^4.17.2",
     "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
+    "nodemon": "^2.0.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.5"
   },
