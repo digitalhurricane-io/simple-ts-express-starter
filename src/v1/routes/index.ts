@@ -1,11 +1,14 @@
-import { Router } from 'express';
+import { Router } from "express";
+import exampleRoute from "./example.route";
+
+
 const router = Router();
 
 /**
  * GET v1/status
  */
-router.get('/status', (req, res) => res.send('OK'));
+router.get("/status", (req, res) => res.send("OK"));
 
-router.use('/example', require('./example.route'));
+router.use("/example", exampleRoute);
 
-module.exports = router;
+export default router;

@@ -4,11 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"tsc -w\" \"NODE_ENV=dev nodemon ./dist/index.js\" ",
+    "start": "tsc && node ./dist/index.js",
+    "watch": "concurrently \"tsc -w\" \"NODE_ENV=dev nodemon ./dist/index.js\" ",
     "prod": "NODE_ENV=production node ./index.js"
   },
   "dependencies": {
-    "@types/express": "^4.17.2",
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
+    "@types/helmet": "0.0.48",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.2",
     "cors": "^2.8.5",
@@ -22,6 +25,8 @@
     "@types/node": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
   }
 }
